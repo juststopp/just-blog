@@ -16,7 +16,7 @@ description:
 
 The goal of this page is to learn how Kerberos works in an Active Directory environment.
 
-## How it works ?
+# How it works ?
 
 Kerberos is used when a client wants to use a service that is exposed on a network, without needing to send his password, and with no need for the server to store the passwords from all the clients. Basically, its a centralized authentication server.
 
@@ -42,5 +42,17 @@ The best exemple for this is when you want to go in a nightclub.
 
 Here is a quick schema of how it works when a users requests a service:
 ![Kerberos - Authentication.png](/images/blog/kerberos-how-it-works/Kerberos%20-%20Authentication.png)
+
+## Detailing the steps
+
+So, we're in an AD context, meaning that the **KDC** is the **DC**. The KDC has **all the information** of the domain, including the secrets of each service, user, machine. Thus, except for the DC, everyone only know his own secret, and therefore do not know the secrets of the other objects in Active Directory.
+
+Here's our current state:
+![Details - Current Step](/images/blog/kerberos-how-it-works/Details%20-%20Current%20state.png)
+
+Let's take a user named `john` as an example. He wants to use a service on the network. To do so `john` need to authenticated himself to the **KDC**,
+and then send a request to use the service. This phase is called the **AS** *Authentication Service*.
+
+### AS : Authentication Service
 
 **TODO** : Finish this page with the explanation of each step + Wireshark example.
