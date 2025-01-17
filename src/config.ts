@@ -6,7 +6,7 @@ export const SITE: Site = {
   profile: "https://juststop.dev/",
   desc: "JustStop__'s blog, with all the writeup of the challenges I solved.",
   title: "JustStop__'s Blog",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 3,
